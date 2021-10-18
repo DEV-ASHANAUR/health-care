@@ -1,0 +1,45 @@
+[
+  {
+    "id": 1,
+    "title": "Health Check",
+    "description": "A customized health check tailored around your needs that includes 20 lab tests and one video consultation with a Praava Family Doctor. With a single call, we will be at your doorstep to collect your sample anywhere within Dhaka.",
+    "price": 2080,
+    "image": "./assets/service/health-check.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Operation Theater",
+    "description": "A customized health check tailored around your needs that includes 20 lab tests and one video consultation with a Praava Family Doctor. With a single call, we will be at your doorstep to collect your sample anywhere within Dhaka.",
+    "price": 9.99,
+    "image": "./assets/service/operation-theyetar.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Pharmacy Support",
+    "description": "A customized health check tailored around your needs that includes 20 lab tests and one video consultation with a Praava Family Doctor. With a single call, we will be at your doorstep to collect your sample anywhere within Dhaka.",
+    "price": 10.99,
+    "image": "./assets/service/Pharmacy.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Ambulance Car",
+    "description": "A customized health check tailored around your needs that includes 20 lab tests and one video consultation with a Praava Family Doctor. With a single call, we will be at your doorstep to collect your sample anywhere within Dhaka.",
+    "price": 23.99,
+    "image": "./assets/service/ambulance.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Lab Test",
+    "description": "A customized health check tailored around your needs that includes 20 lab tests and one video consultation with a Praava Family Doctor. With a single call, we will be at your doorstep to collect your sample anywhere within Dhaka.",
+    "price": 3.99,
+    "image": "./assets/service/lab.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Intensive Care",
+    "description": "A customized health check tailored around your needs that includes 20 lab tests and one video consultation with a Praava Family Doctor. With a single call, we will be at your doorstep to collect your sample anywhere within Dhaka.",
+    "price": 19.99,
+    "image": "./assets/service/care.jpg"
+  }
+  
+]

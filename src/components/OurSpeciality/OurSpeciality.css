@@ -1,0 +1,13 @@
+.type-heading {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 20px;
+    border-left: 3px solid #0d6efd;
+    padding: 0 8px;
+}
+.type-desc {
+    box-shadow: 6px 0px 16px #ddd;
+    padding: 10px;
+    margin-left: 19px;
+    border: 2px solid #ddd;
+}

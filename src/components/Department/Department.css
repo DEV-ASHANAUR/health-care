@@ -1,0 +1,31 @@
+.department-section{
+    background:url('../../assets/department.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    /* min-height: 90vh; */
+    background-repeat: no-repeat;
+}
+.depoverly {
+    background: #6b629fa8;
+}
+.learn-btn {
+    border: none;
+    background: none;
+    color: #1279a1;
+    font-weight: 700;
+    font-size: 17px;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+}
+.dep-icon{
+    font-size: 50px;
+    color: #1279a1;
+}
+.dep-card{
+    transition: 0.3s;
+}
+.dep-card:hover{
+    transform: scale(1.04);
+}

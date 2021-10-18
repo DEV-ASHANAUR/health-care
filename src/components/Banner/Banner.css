@@ -1,0 +1,57 @@
+.bg-banner{
+    background:url('../../assets/background1.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    /* min-height: 90vh; */
+    background-repeat: no-repeat;
+}
+.overly {
+    background: #1d142899;
+    width: 100%;
+    min-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.overly h1{
+    color: #fff;
+}
+.head-img{
+    position: absolute;
+    bottom: 0;
+}
+.discover-btn{
+    background:none;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 10px 15px;
+    transition: 0.5s ease;
+    font-size: 18px;
+}
+.discover-btn:hover{
+    background:#fff;
+    color: #000;
+}
+.head-description{
+    font-size: 20px;
+    width: 50%;
+    color: #fff;
+}
+
+/* media */
+
+@media (max-width: 575.98px) {
+    .head-description{
+        font-size: 18px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .head-description{
+        width: 90%;
+    }
+}
