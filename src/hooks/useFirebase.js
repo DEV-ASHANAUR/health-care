@@ -23,7 +23,6 @@ const useFirebase = () => {
           }).then(() => {
             // Profile updated!
             console.log('profile updated');
-            getAuth();
           }).catch((error) => {
             // An error occurred
             console.log('error while update',error);
@@ -43,8 +42,7 @@ const useFirebase = () => {
     }
     // useEffect for monitoring user login or not
     useEffect(()=>{
-        setIsLoading(true);
-        onAuthStateChanged(auth, (user) => {
+        const notUnsubscibe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 // User is signed in, see docs for a list of available properties
                 // https://firebase.google.com/docs/reference/js/firebase.User
@@ -54,12 +52,13 @@ const useFirebase = () => {
             } else {
                 // User is signed out
                 // ...
+                setUser({}); 
                 console.log('user is Sign out');
             }
             setIsLoading(false)
         });
-        console.log('trigger');
-    },[auth,user]);
+        return() => notUnsubscibe;
+    },[auth]);
     //logout user
     const logOut = ()=>{
         setIsLoading(true)

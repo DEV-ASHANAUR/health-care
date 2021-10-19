@@ -8,7 +8,9 @@ import SignUp from './components/SignUp/SignUp';
 import ServiceDetails from './components/ServiceDetails/ServiceDetails';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-
+import NotFound from './components/NotFound/NotFound';
+import AboutUs from './components/AboutUs/AboutUs';
+import ContactUs from './components/ContactUs/ContactUs';
 function App() {
   return (
     <>
@@ -22,7 +24,13 @@ function App() {
               <Route path="/home">
                 <Home></Home>
               </Route>
-              <PrivateRoute path="/details/:id">
+              <Route path="/about">
+                <AboutUs></AboutUs>
+              </Route>
+              <Route path="/contact">
+                <ContactUs></ContactUs>
+              </Route>
+              <PrivateRoute path="/details/:serviceId">
                 <ServiceDetails></ServiceDetails>
               </PrivateRoute>
               <Route path="/login">
@@ -30,6 +38,9 @@ function App() {
               </Route>
               <Route path="/signup">
                 <SignUp></SignUp>
+              </Route>
+              <Route path="*">
+                <NotFound></NotFound>
               </Route>
             </Switch>
           <Footer></Footer>

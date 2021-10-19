@@ -55,7 +55,7 @@ const Login = () => {
                 <div className='container '>
                     <div className="row ">
                         <div className="col-md-12">
-                            <div className="card m-auto my-5" style={{width: '25rem'}}>
+                            <div className="card m-auto my-5" style={{maxWidth: '25rem'}}>
                                 <div className="card-body">
                                 <span style={{display:'block',textAlign:'center',margin: '15px 0',color:'red',fontSize:'20px',textDecoration:'none',fontWeight:'700'}}>Log In Here</span>
                                     <form onSubmit={handleEmailPasswordSignIn}>

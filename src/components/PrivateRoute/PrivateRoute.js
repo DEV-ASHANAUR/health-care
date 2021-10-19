@@ -6,9 +6,9 @@ const PrivateRoute = ({children, ...rest}) => {
     const {user,isLoading} = useAuth();
     //waiting for user status
     if(isLoading){
-        return (<div class="text-center">
-                    <button class="btn btn-primary" type="button" disabled>
-                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        return (<div className="text-center">
+                    <button className="btn btn-primary" type="button" disabled>
+                        <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                         Loading...
                     </button>
                 </div>

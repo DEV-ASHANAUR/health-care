@@ -15,7 +15,7 @@ const Service = (props) => {
             </div>
             <div className="card-body">
                 <h3 className="card-title">{title}</h3>
-                <p className="card-text text-description">{description}</p>
+                <p className="card-text text-description">{description.slice(0, 100) }..</p>
                 <button onClick={handleServiceDetails} className='read-btn'>read more <i className="fas fa-arrow-right"></i></button>
             </div>
             </div>

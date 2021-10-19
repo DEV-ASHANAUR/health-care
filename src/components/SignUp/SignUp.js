@@ -60,11 +60,10 @@ const SignUp = () => {
                 confirm_password:''
             });
             // setUser(result.user);
-            console.log(result.user);
+            // console.log(result.user);
             toast.success("Sign Up Success! Please Login.");
             window.location.href = "/home";
         }).catch(err => {
-            // console.log('error while create user',err.message);
             toast.error(err.message);
         }).finally(()=>{
             setIsLoading(false);
