@@ -5,7 +5,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import useAuth from '../../hooks/useAuth';
 import './SignUp.css';
 const SignUp = () => {
+    const[signloading,setSignloding] = useState(false);
     const history = useHistory();
+    //form hooks
     const [data,setData] = useState({
         name:'',
         email:'',
@@ -40,13 +42,16 @@ const SignUp = () => {
     }
     //handleManualSignUp
     const handleManualSignUp = (e) => {
+        setSignloding(true);
         e.preventDefault();
-        if(data.password.length > 6){
+        if(data.password.length < 6){
             toast.error("Password Min Length Is Six");
+            setSignloding(false);
             return;
         }
         if(data.password !== data.confirm_password){
             toast.error("Password And Confirm Password Are Not Match");
+            setSignloding(false);
             return;
         }
         manualSignUp(data.email,data.password)
@@ -59,16 +64,15 @@ const SignUp = () => {
                 password:'',
                 confirm_password:''
             });
-            // setUser(result.user);
-            // console.log(result.user);
             toast.success("Sign Up Success! Please Login.");
             window.location.href = "/home";
-        }).catch(err => {
+            }).catch(err => {
             toast.error(err.message);
-        }).finally(()=>{
-            setIsLoading(false);
-        });
-    } 
+            }).finally(()=>{
+                setSignloding(false);
+                setIsLoading(false);
+            });
+        } 
     return (
         <>
             <div className='login-banner'>
@@ -87,7 +91,7 @@ const SignUp = () => {
 
                                         <input name="confirm_password" value={data.confirm_password} onChange={InputEvent} className='form-control my-3' type="password" placeholder="Enter Confirm Password" />
 
-                                        <input type="submit" value="submit" className="submit-btn my-4" />
+                                        <input type="submit" value={signloading?'submiting..':'submit'} className="submit-btn my-4" />
                                     </form>
                                     <Link to='/login' style={{display:'block',textAlign:'center',margin: '15px 0',color:'red',fontSize:'20px',textDecoration:'none'}}>Already Have An Account?</Link>
                                     <hr />

@@ -20,15 +20,18 @@ const useFirebase = () => {
         setIsLoading(true);
         updateProfile(auth.currentUser, {
             displayName: name, photoURL: "https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png"
-          }).then(() => {
+          }).then((result) => {
             // Profile updated!
-            console.log('profile updated');
+            const auth = getAuth();
+            setUser(auth.currentUser);
+            console.log('profile updated',auth.currentUser);
           }).catch((error) => {
             // An error occurred
             console.log('error while update',error);
           }).finally(()=>{
             setIsLoading(false);
         });
+
     }
     //manual email password sign up
     const manualSignUp = (email,password) => {
@@ -45,20 +48,16 @@ const useFirebase = () => {
         const notUnsubscibe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 // User is signed in, see docs for a list of available properties
-                // https://firebase.google.com/docs/reference/js/firebase.User
-                // const uid = user.uid;
-                setUser(user);  
-                // ...
+                setUser(user);
             } else {
                 // User is signed out
-                // ...
                 setUser({}); 
                 console.log('user is Sign out');
             }
             setIsLoading(false)
         });
         return() => notUnsubscibe;
-    },[auth]);
+    },[]);
     //logout user
     const logOut = ()=>{
         setIsLoading(true)

@@ -8,7 +8,7 @@ const Content = (props) => {
             </div>
             <div className="col-md-6">
                 <h3 style={{fontWeight:'700'}}>Service Name : {title}</h3>
-                <h3 style={{fontWeight:'700'}}>Description : </h3>
+                <h3 style={{fontWeight:'700'}}>Description <i className="fas fa-level-down-alt"></i> </h3>
                 <p style={{fontSize:'25px'}}>{description}</p>
             </div>
         </>

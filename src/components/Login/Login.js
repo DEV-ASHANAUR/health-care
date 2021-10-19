@@ -4,6 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import useAuth from '../../hooks/useAuth';
 import './Login.css';
 const Login = () => {
+    const[signloading,setSignloding] = useState(false);
     const [data,setData] = useState({
         email:'',
         password:''
@@ -38,14 +39,16 @@ const Login = () => {
     }
     //emailPasswordSignIn
     const handleEmailPasswordSignIn = (e) => {
+        setSignloding(true);
         e.preventDefault();
         emailPasswordSignIn(data.email,data.password)
         .then((result)=>{
             history.push(location_uri);
         }).catch(err=>{
             console.log(err);
-            toast.error(err);
+            toast.error(err.message);
         }).finally(()=>{
+            setSignloding(false);
             setIsLoading(false);
         })
     }
@@ -63,7 +66,7 @@ const Login = () => {
 
                                         <input name="password" value={data.password} onChange={InputEvent} className='form-control my-3' type="password" placeholder="Enter Password" required />
 
-                                        <input type="submit" value="submit" className="submit-btn my-4" />
+                                        <input type="submit" value={signloading?'Loging..':'submit'} className="submit-btn my-4" />
                                     </form>
                                     <Link to="/signup" style={{display:'block',textAlign:'center',margin: '15px 0',color:'red',fontSize:'20px',textDecoration:'none'}}>Need A Account?</Link>
                                     <hr />

@@ -42,7 +42,7 @@ const Navbar = () => {
                         </ul>
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
                             {
-                                user?.displayName ? 
+                                user?.email ? 
                                 <li className="nav-item ps-4">
                                     <NavLink className="nav-link" aria-current="page" to="#">{user.displayName}</NavLink>
                                 </li>
@@ -53,7 +53,7 @@ const Navbar = () => {
                             }
 
                             {
-                                user?.displayName ? 
+                                user?.email ? 
                                 <li className="nav-item ps-4">
                                     <button onClick={logOut} className='btn-logout' title='logout'><i className="fas fa-sign-out-alt"></i></button>
                                 </li>
