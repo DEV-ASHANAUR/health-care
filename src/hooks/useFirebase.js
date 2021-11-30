@@ -31,7 +31,6 @@ const useFirebase = () => {
           }).finally(()=>{
             setIsLoading(false);
         });
-
     }
     //manual email password sign up
     const manualSignUp = (email,password) => {
